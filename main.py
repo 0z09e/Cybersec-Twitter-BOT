@@ -2,7 +2,8 @@ import tweepy
 from datetime import date
 import time
 
-def time1(): #returns current time
+
+def time1():
 	from datetime import datetime
 
 	# datetime object containing current date and time
@@ -11,14 +12,23 @@ def time1(): #returns current time
 	return dt_string
 
 
-def whole_data(hashtags): #returns 
+API_key = ''
+API_key_secret = ''
+Bearer_token = ''
+access_token = ''
+access_token_secret = ''
+auth = tweepy.OAuthHandler(API_key, API_key_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth, wait_on_rate_limit=True)
+print("[ " + str(time1()) + " ] Connected to twitter")
+def whole_data(hashtags):
 	arr = []
 	try:
-		for tweet in tweepy.Cursor(api.search, q=hashtags, rpp=100,exclude_replies=True,lang='en').items(): #Searching for hashtags related to given parameter 
-		#print(tweet.text)
-			date1 = str(tweet.created_at) # Checking the date of that tweet
+		for tweet in tweepy.Cursor(api.search, q=hashtags + " exclude:replies exclude:retweets", rpp=100,exclude_replies=False,lang='en').items():
+			date1 = str(tweet.created_at)
 			dates = list(map(str , date1.split()))
-			if dates[0] == str(date.today()): #Matches it with the current date
+			text = tweet.text
+			if dates[0] == str(date.today()) and "RT @" not in text:
 				arr.append(tweet)
 			return arr
 	except:
@@ -28,23 +38,11 @@ def whole_data(hashtags): #returns
 			
 
 def twitter():
-	API_key = '' #Insert API key here
-	API_key_secret = '' #Insert API key Secret here
-	Bearer_token = '' #Insert Bearer token here
-	access_token = '' #Insert Access token here
-	access_token_secret = '' #Insert access token secret here
-	auth = tweepy.OAuthHandler(API_key, API_key_secret)
-	auth.set_access_token(access_token, access_token_secret)
-	global api 
-	api = tweepy.API(auth, wait_on_rate_limit=True) #Authentication with wait_on_rate_limit turned beacause twiiter API takes 300 request per 15 minute after that it stops responding for some time.wait_on_rate_limit will waits until it responds back
-	print("[ " + str(time1()) + " ] Connected to twitter") 
-
 	while True:
 		print("[ " + str(time1()) + " ] searching for tweets.....")
 		
-		hashtags = ['#databreach', '#activedirectory', '#exploit', '#0day', '#infosec','#malware', '#cve', '#cyberattack', '#cybersecurity', '#cybersec','#zeroday', '#privilageescalation', '#privesc', '#bufferoverflow','#heapoverflow', '#ctf', '#rce', '#remotecommandexecution', '#xss','#owasp', '#rapid7', '#exploitdb', '#csrf'] #Hashtags, change this according to your need
+		hashtags = ['databreach', 'activedirectory', '0day', 'infosec','malware', 'cyberattack', 'cybersecurity','zeroday', 'bufferoverflow','heapoverflow' , 'stackoverflow' , 'capturetheflag', 'remotecommandexecution', 'crosssitescripting', 'rapid7', 'exploitdb' , 'crosssiterequestforgery ' , 'bugbounty' , 'bughunting' , 'bugfinder']
 		print("[ " + str(time1()) + " ] fewwww....Let me wake up")
-		time.sleep(10)
 		for tags in hashtags:
 			big_data = whole_data(tags)
 			try:
@@ -58,7 +56,9 @@ def twitter():
 						continue
 			except:
 				print(  "[ "+str(time1())+" ] ouchh....got some crappy error,i have to sleep for  a while")
-				time.sleep(60)
+				time.sleep(10)
 				continue
 		print("[ " + str(time1()) + " ] no more tweet found,going for a nap...zzzzzz")
-		time.sleep(60)
+		time.sleep(30)
+
+

@@ -1,7 +1,7 @@
 # Cybersec Twitter BOT 
 ***
-I've developed that bot a couple of weeks age which retweets everything related to cybersecurity. [Cybersec-Bot](https://twitter.com/botcybersec)
-<br/>But you can configure that bot according to your own need.
+I've developed that bot a couple of weeks age which retweets everything related to cybersecurity.
+But you can configure that bot according to your own need.
 
 ***
 ## Installation
@@ -22,7 +22,7 @@ And done.
 - access_token_secret
 - bearer_token
 
-2. Now replace hashtags with whatever you want
+2. Now replace hashtags with whatever query you want
 
 ***
 
