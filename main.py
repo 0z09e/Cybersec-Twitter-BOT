@@ -62,3 +62,4 @@ def twitter():
 		time.sleep(30)
 
 
+twitter()
