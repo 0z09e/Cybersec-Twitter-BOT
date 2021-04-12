@@ -41,7 +41,7 @@ def twitter():
 	while True:
 		print("[ " + str(time1()) + " ] searching for tweets.....")
 		
-		hashtags = ['databreach', 'activedirectory', '0day', 'infosec','malware', 'cyberattack', 'cybersecurity','zeroday', 'bufferoverflow','heapoverflow' , 'stackoverflow' , 'capturetheflag', 'remotecommandexecution', 'crosssitescripting', 'rapid7', 'exploitdb' , 'crosssiterequestforgery ' , 'bugbounty' , 'bughunting' , 'bugfinder']
+		hashtags = ['databreach', 'activedirectory', '0day', 'infosec','malware', 'cyberattack', 'cybersecurity','zeroday', 'bufferoverflow','heapoverflow'  , 'capturetheflag', 'remotecommandexecution', 'crosssitescripting', 'rapid7', 'exploitdb' , 'crosssiterequestforgery ' , 'bugbounty' , 'bughunting' , 'bugfinder']
 		print("[ " + str(time1()) + " ] fewwww....Let me wake up")
 		for tags in hashtags:
 			big_data = whole_data(tags)
