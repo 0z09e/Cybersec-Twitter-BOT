@@ -1,6 +1,7 @@
 # Cybersec Twitter BOT 
 ***
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40botcybersec)](https://twitter.com/botcybersec)
 
 I've developed that bot a couple of weeks age which retweets everything related to cybersecurity.
 But you can configure that bot according to your own need.
