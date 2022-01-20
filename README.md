@@ -3,7 +3,7 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) ||
   [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40botcybersec)](https://twitter.com/botcybersec)
 
-I've developed that bot a couple of weeks age which retweets everything related to cybersecurity.
+I've developed that bot a couple of weeks ago which retweets everything related to cybersecurity.
 But you can configure that bot according to your own need.
 
 ## Installation
